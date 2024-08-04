@@ -21,14 +21,14 @@ export default {
                 brand: 'Бренд',
                 discount: '25%',
                 isBestSeller: true,
-                isInStock: true,
+                isInStock: false,
                 name: 'Полное название товара в несколько строк для вида с обрывом в концe Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae id incidunt quos suscipit dolor quis. Magnam nesciunt voluptatum pariatur repellat quibusdam iste voluptatibus praesentium nihil voluptates? Amet vero saepe earum!',
                 currentPrice: '5 990 ₽',
                 oldPrice: '5 990 ₽'
             },
             {
                 brand: 'Бренд',
-                discount: '25%',
+                discount: '12%',
                 isBestSeller: true,
                 isInStock: true,
                 name: 'Полное название товара в несколько строк для вида с обрывом в концe Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae id incidunt quos suscipit dolor quis. Magnam nesciunt voluptatum pariatur repellat quibusdam iste voluptatibus praesentium nihil voluptates? Amet vero saepe earum!',
@@ -37,7 +37,7 @@ export default {
             },
             {
                 brand: 'Бренд',
-                discount: '25%',
+                discount: '54%',
                 isBestSeller: true,
                 isInStock: true,
                 name: 'Полное название товара в несколько строк для вида с обрывом в концe Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae id incidunt quos suscipit dolor quis. Magnam nesciunt voluptatum pariatur repellat quibusdam iste voluptatibus praesentium nihil voluptates? Amet vero saepe earum!',
@@ -46,12 +46,12 @@ export default {
             },
             {
                 brand: 'Бренд',
-                discount: '25%',
+                discount: '0%',
                 isBestSeller: true,
                 isInStock: true,
                 name: 'Полное название товара в несколько строк для вида с обрывом в концe Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae id incidunt quos suscipit dolor quis. Magnam nesciunt voluptatum pariatur repellat quibusdam iste voluptatibus praesentium nihil voluptates? Amet vero saepe earum!',
                 currentPrice: '5 990 ₽',
-                oldPrice: '6 990 ₽'
+                oldPrice: ''
             },
             {
                 brand: 'Бренд',

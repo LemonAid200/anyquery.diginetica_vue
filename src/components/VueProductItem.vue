@@ -19,7 +19,8 @@
             <h2 class="main__productsList__productCard-currentPrice">{{ product.currentPrice }}</h2>
             <h3 class="main__productsList__productCard-oldPrice">{{ product.oldPrice }}</h3>      
         </div>
-        <button class="main__productsList__productCard-buyBtn">Купить</button>
+        <button v-if="product.isInStock" class="main__productsList__productCard-buyBtn">Купить</button>
+        <button v-else class="main__productsList__productCard-remindWhenAvailable">Сообщить о поступлении</button>
     </div>       
 </template>
 
@@ -139,6 +140,19 @@ export default {
         width: 75px;
         height: 38px;
         color: rgb(115, 151, 245);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 14px;  
+        margin-top: 12px;
+    }
+    &-remindWhenAvailable {
+        @include custom-border(rgb(170, 170, 170), 4px);
+        @include hover-smart(white, rgb(170, 170, 170));
+
+        box-sizing: border-box;
+        width: 100%;
+        height: 38px;
+        color: rgb(170, 170, 170);
         font-size: 14px;
         font-weight: 700;
         line-height: 14px;  
