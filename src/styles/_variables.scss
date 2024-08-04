@@ -1,0 +1,49 @@
+@mixin custom-border($color: rgb(213, 213, 213), $round: 4px) {
+    box-sizing: border-box;
+    border: 1px solid $color;
+    border-radius: $round;
+    background: none;
+}
+
+@mixin unset-default {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    border: none;
+    background: none;
+    &:focus-visible{
+        outline: none;
+    }
+}
+
+@mixin custom-scroll {
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+      
+    &::-webkit-scrollbar-thumb {
+        background: rgb(170, 170, 170);;
+        border-radius: 2px;
+
+      }
+      
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgb(129, 129, 129);;
+    }
+}
+
+@mixin hover-smart($text, $background){
+    @media (hover:hover){
+        &:hover {
+            color: $text;
+            background-color: $background;
+        }
+    }
+
+    @media (hover:none) {
+        &:active {
+            color: $text;
+            background-color: $background;
+        }                            
+    }
+}
