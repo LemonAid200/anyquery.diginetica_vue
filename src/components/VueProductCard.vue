@@ -12,14 +12,13 @@
                 <span>Хит продаж</span>
                 <img src="../assets/images/fire_icon.svg" alt="">
             </div>
+            
             <div class="main__productsList__productCard-image__discountMark">
                 <span>{{ product.discount }}</span>                            
             </div>
         </div>
         <span class="main__productsList__productCard-brand">{{ product.brand }}</span>
-        <p class="main__productsList__productCard-name">
-            {{ productName }}
-        </p>
+        <p class="main__productsList__productCard-name">{{ productName }}</p>
         <div class="main__productsList__productCard-price">
             <h2 class="main__productsList__productCard-currentPrice">{{ product.currentPrice }}</h2>
             <h3 class="main__productsList__productCard-oldPrice">{{ product.oldPrice }}</h3>      
@@ -52,6 +51,15 @@ export default {
     height: 360px;
     text-align: left;
     
+    &:hover &-image__picture  {
+        transform: scale(calc(80/60));
+        transition: transform ease 300ms;
+    }
+
+    &:hover &-name {
+        color: rgb(18, 91, 174);
+    }
+
     &-image {
         height: 200px;
         position: relative;
@@ -61,6 +69,7 @@ export default {
         &__picture {
             display: block;
             margin: 0 auto;
+            transition: transform ease 300ms;
         }
 
         &__mark {      
@@ -68,7 +77,7 @@ export default {
             height: 32px;
             width: 112px;
             top: 12px;
-            left: 2px;      
+            left: 12px;      
             box-sizing: border-box;
             border: 1px solid rgb(242, 242, 242);
             border-radius: 4px;
@@ -104,8 +113,9 @@ export default {
         display: block;
         margin-top: 12px;
     }
+
     &-name {     
-        @include hover-smart(rgb(18, 91, 174), none);
+
         color: rgb(51, 51, 51);
         font-size: 14px;
         font-weight: 400;
@@ -119,6 +129,7 @@ export default {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
     }
+
     &-price {    
         display: flex;  
         gap: 8px;
@@ -126,6 +137,7 @@ export default {
         margin-top: 12px;
         height: 14px;           
     }
+
     &-currentPrice {   
         color: rgb(51, 51, 51);
         font-size: 16px;
@@ -133,6 +145,7 @@ export default {
         line-height: 14px;            
 
     }
+
     &-oldPrice {   
         color: rgb(170, 170, 170);
         font-size: 12px;
@@ -141,6 +154,7 @@ export default {
         text-decoration-line: line-through; 
 
     }
+
     &-buyBtn {
         @include custom-border(rgb(115, 175, 244), 4px);
         @include hover-smart(white, rgb(115, 151, 245));
@@ -154,6 +168,7 @@ export default {
         line-height: 14px;  
         margin-top: 12px;
     }
+
     &-remindWhenAvailable {
         @include custom-border(rgb(170, 170, 170), 4px);
         @include hover-smart(white, rgb(170, 170, 170));
@@ -167,8 +182,6 @@ export default {
         line-height: 14px;  
         margin-top: 12px;
     }
-
-
 }
 
 @media (min-width: $layout-breakpoint-small) {

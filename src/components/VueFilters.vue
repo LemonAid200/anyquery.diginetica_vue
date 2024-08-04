@@ -1,68 +1,46 @@
 <template>
-    <div class="main__filters">
-        <div class="main__filters-categories">
-            <ul>
-                <li><span>Название категории</span> <span class="main__filters-categories__count">3</span></li>
-                <li><span>Название категории</span> <span class="main__filters-categories__count">3</span></li>
-                <li><span>Название категории</span> <span class="main__filters-categories__count">3</span></li>
-                <li><span>Название категории</span> <span class="main__filters-categories__count">3</span></li>
-            </ul>
+    <div  :class="['main__filters', { 'main__filters-open': isOpenOnMobile }]">
+        <div @click="$emit('toggleMobileMenu')" class="main__filters__close-btn">
+            <img src="../assets/images/arrow.svg" alt="">
         </div>
-        <div class="main__filters-price">
-            <h3>Цена</h3>
 
-            <div class="main__filters-price__search">
-                <div class="main__filters-price__search__custom-input">
-                    <span>от</span>
-                    <input type="text" placeholder="5 500 ₽">
-                </div>
-                <div class="main__filters-price__search__horizontal-line"></div>
-                <div class="main__filters-price__search__custom-input">
-                    <span>от</span>
-                    <input type="text" placeholder="5 500 ₽">
-                </div>
-            </div>
+        <VueCategoriesList/>
 
-        </div>
-        <div class="main__filters-brands">
-            <div class="main__filters-brands__title-btn-wrapper">
-                <h3>Бренд</h3>
-                <button class="main__filters-brands-clearBtn">Очистить</button>
-            </div>
+        <VuePriceFilter/>
 
-            <div class="main__filters-brands__search">
-                <img src="../assets/images/search_light.svg" alt="">
-                <input type="text" placeholder="Поиск">
-            </div>
-            <div class="main__filters-brands-brandsList">
-                <ul>
-                    <VueFilterAtributeItem v-for="id in 9" :key="id"/>
-                </ul>
-            </div>
-        </div>
-        <div class="main__filters-size">
-            <h3>Размер</h3>
-            <div class="main__filters-size-sizeList">
-                <ul>
-                    <VueFilterAtributeItem v-for="id in 6" :key="id"/>
-                    
-                    
-                </ul>
-            </div>
-        </div>
+        <VueBrandsFilter/>
+        
+        <VueSizesFilter/>
+
+
     </div>
 </template>
 
 <script>
-import VueFilterAtributeItem from '../components/customUI/VueFilterAtributeItem.vue'
+import VueSizesFilter from '../components/customUI/VueSizesFilter.vue'
+import VueCategoriesList from './customUI/CategoriesList.vue';
+import VuePriceFilter from './customUI/PriceFilter.vue';
+import VueBrandsFilter from './customUI/BrandsFilter.vue';
 
 export default {
   name: 'VueFilters',
-  components: {
-    VueFilterAtributeItem
-  },
   props: {
-  }
+    isOpenOnMobile: {
+        type: Boolean,
+        default: () => false
+    }
+  },
+  components: {
+    VueCategoriesList,
+    VuePriceFilter,
+    VueBrandsFilter,
+    VueSizesFilter
+  },
+  data() {
+    return {
+
+    }
+  },
 }
 </script>
 
@@ -78,159 +56,26 @@ export default {
     line-height: 20px;
   }
 
-  &-categories {
-    ul {
-        li {
-            @include hover-smart( none, rgb(226, 239, 255));
-            
-            width: 280px;
-            height: 30px;
-            border-radius: 5px;
-            box-sizing: border-box;
-            padding-left: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-right: 16px;
-            cursor: pointer;
+  &__close-btn {
+    display: none;
+    width: 100%;
+    height: 20px;
 
-            span {
-                color: rgb(51, 51, 51);
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 16px;
-            }
 
-            .main__filters-categories__count {
-                color: rgb(170, 170, 170);
-                font-size: 12px;
-                font-weight: 400;
-                line-height: 14px;
-            }
-
-            &:first-child {
-                padding-left: 8px;
-            }
-        }
-        
+    img {
+        height: 12px;
     }
-      
-}
+  }
 
-&-price {
-    margin-top: 28px;
-    &__search {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
 
-        &__custom-input {
-            @include custom-border();
-            display: flex;
-            align-items: center;
-            width: 119px;
-            height: 36px;
 
-            span {
-                display: inline-block;
-                line-height: 36px; 
-                height: 38px;
-                font-size: 12px;
-                font-weight: 400;
-                color: rgb(170, 170, 170);
-                margin-left: 8px;
-            }
-            input {
-                @include unset-default();
-                width: 100%;
-                margin-left: 6px;
-                color: rgb(51, 51, 51);
-                font-family: PT Sans;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 16px;
 
-                    &::placeholder {
-                        color: rgb(51, 51, 51);
-                        font-family: PT Sans;
-                        font-size: 14px;
-                        font-weight: 400;
-                        line-height: 16px;
-                    }
-                }
-            }
 
-            &__horizontal-line{
-                width: 10px;
-                height: 1px;
-                background: rgb(213, 213, 213);
-            }
 
-        }
-
-    }
-
-&-brands {
-    margin-top: 28px;
-    &__title-btn-wrapper{
-        display: flex;
-        justify-content: space-between;
-        height: 20px;
-
-        h3 {
-            text-align: left;
-            margin-top: 0;
-        }
-        button {
-            @include unset-default();
-            color: rgb(170, 170, 170);
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 12px;
-            text-decoration-line: underline;
-        }
-    }
-
-    &__search {
-        margin-top: 16px;
-        width: 280px;
-        height: 36px;
-        display: flex;
-        align-items: center;
-        padding: 0 12px;
-
-        img {
-            width: 12px;
-            height: 12px;
-            
-        }
-        
-        @include custom-border();
-
-        input {
-            @include unset-default();
-            margin-left: 8px;
-            width: 100%;
-        }
-
-    }
-
-    &-brandsList {
-        margin-top: 16px;
-
-        ul {
-            @include custom-scroll();
-            max-height: 180px;
-            overflow-y: scroll;
-            overflow-x: visible;
-        }
-
-    }
-    }
 
   &-size {
-      margin-top: 28px;
+      margin: 28px 0;
+      
       &-sizeList {
           margin-top: 16px;
 
@@ -285,7 +130,37 @@ export default {
 
 @media (max-width: $layout-breakpoint-small) {
   .main__filters {
-    display: none;
-}
+        @include custom-scroll;
+        max-height: 100vh;
+        overflow-y: scroll;
+        overflow-x: visible;
+        padding: 0 6px;
+        position: fixed;
+        background-color: white;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        opacity: 0;
+        transition: transform ease-in-out 750ms;
+        transform: translate(-100%, 0);
+
+        &__close-btn {
+            background: rgb(115,152,245);
+            background: linear-gradient(90deg, rgba(115,152,245,0) 0%, rgba(115,152,245,0.30575980392156865) 50%, rgba(115,152,245,0) 100%);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            img {
+                height: 12px;
+            }
+        }
+    }
+
+    .main__filters-open {
+        opacity: 1;
+        transition: transform ease-in-out 750ms;
+        transform: translate(0, 0);
+    }
 }
 </style>

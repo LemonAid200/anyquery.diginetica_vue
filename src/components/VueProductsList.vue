@@ -92,17 +92,19 @@ export default {
 .main__productsList {
     display: grid;
     gap: 12px 16px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
-@media (max-width: $layout-breakpoint-large) {
+
+@media (min-width: $layout-breakpoint-medium) {
   .main__productsList {
     grid-template-columns: repeat(3, 1fr);
+    gap: 24px 24px;
   }
 }
-@media (max-width: $layout-breakpoint-medium) {
+@media (min-width: $layout-breakpoint-large) {
   .main__productsList {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

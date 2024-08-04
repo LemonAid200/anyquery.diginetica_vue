@@ -7,7 +7,7 @@
 </template>
 
 <script>  
-import VueCustomCheckbox from './VueCustomCheckbox.vue' 
+import VueCustomCheckbox from './CustomCheckbox.vue' 
 
 export default {
 name: 'VueFilterAtributeItem',
