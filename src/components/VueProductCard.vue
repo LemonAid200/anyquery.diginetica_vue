@@ -114,6 +114,10 @@ export default {
         height: 48px; 
         cursor: pointer;  
         text-align: left;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
     &-price {    
         display: flex;  
@@ -162,6 +166,14 @@ export default {
         font-weight: 700;
         line-height: 14px;  
         margin-top: 12px;
+    }
+
+
+}
+
+@media (min-width: $layout-breakpoint-small) {
+    .main__productsList__productCard {
+        height: 372px;
     }
 }
 </style>

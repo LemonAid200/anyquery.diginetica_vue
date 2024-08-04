@@ -41,6 +41,14 @@ export default {
   margin: 0 100px;
 }
 
+
+@media (max-width: $layout-breakpoint-extra-large) {
+  #app {
+    margin: 0 16px;
+
+  }
+}
+
 body {
   @include unset-default();
   @include custom-scroll();
@@ -75,5 +83,14 @@ body {
     line-height: 16px;
   }
 
+  @media (max-width: $layout-breakpoint-small) {
+  .main {
+    grid-template-columns: 1fr;
+    margin: 0 16px;
+  }
 }
+
+}
+
+
 </style>
