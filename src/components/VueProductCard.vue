@@ -1,7 +1,12 @@
 <template>
     <div class="main__productsList__productCard">
         <div class="main__productsList__productCard-image">
-            <img class="main__productsList__productCard-image__picture" src="../assets/images/item_icon.svg" alt="">
+            <img class="main__productsList__productCard-image__picture" 
+                :src="product.isInStock ? 
+                require('@/assets/images/item_icon.svg') :
+                require('@/assets/images/item_notInStock_icon.svg')" 
+                alt="Product image" 
+            >
 
             <div class="main__productsList__productCard-image__mark" v-if="product.isBestSeller">
                 <span>Хит продаж</span>
@@ -26,7 +31,7 @@
 
 <script>
 export default {
-    name: 'VueProductItem',
+    name: 'VueProductCard',
     props: {
         product: Object
     },

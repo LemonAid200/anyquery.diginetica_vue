@@ -1,16 +1,16 @@
 <template>
 <div class="main__productsList">
-    <VueProductItem v-for="product in productsList" :product="product" :key="product.id"/>    
+    <VueProductCard v-for="product in productsList" :product="product" :key="product.id"/>    
 </div>
 </template>
 
 <script>
-import VueProductItem from './VueProductItem.vue'
+import VueProductCard from './VueProductCard.vue'
 
 export default {
   name: 'VueProductsList',
   components: {
-    VueProductItem
+    VueProductCard
   },
   props: {
   },
@@ -24,13 +24,13 @@ export default {
                 isInStock: false,
                 name: 'Полное название товара в несколько строк для вида с обрывом в концe Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae id incidunt quos suscipit dolor quis. Magnam nesciunt voluptatum pariatur repellat quibusdam iste voluptatibus praesentium nihil voluptates? Amet vero saepe earum!',
                 currentPrice: '5 990 ₽',
-                oldPrice: '5 990 ₽'
+                oldPrice: '5 990 ₽',
             },
             {
                 brand: 'Бренд',
                 discount: '12%',
                 isBestSeller: true,
-                isInStock: true,
+                isInStock: false,
                 name: 'Полное название товара в несколько строк для вида с обрывом в концe Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae id incidunt quos suscipit dolor quis. Magnam nesciunt voluptatum pariatur repellat quibusdam iste voluptatibus praesentium nihil voluptates? Amet vero saepe earum!',
                 currentPrice: '5 990 ₽',
                 oldPrice: '55 990 ₽'
