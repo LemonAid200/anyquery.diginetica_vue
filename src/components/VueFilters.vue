@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import VueSizesFilter from '../components/customUI/VueSizesFilter.vue'
+import VueSizesFilter from './customUI/SizesFilter.vue'
 import VueCategoriesList from './customUI/CategoriesList.vue';
 import VuePriceFilter from './customUI/PriceFilter.vue';
 import VueBrandsFilter from './customUI/BrandsFilter.vue';
