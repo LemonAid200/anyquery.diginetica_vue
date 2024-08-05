@@ -64,7 +64,8 @@ export default {
         height: 200px;
         position: relative;
         background: rgb(248, 248, 250);
-        align-content: center;
+        display: flex;
+        align-items: center;
 
         &__picture {
             display: block;
