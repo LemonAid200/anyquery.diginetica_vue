@@ -145,7 +145,8 @@ export default {
     }
 
     .header {
-        padding: 0 16px;
+        padding: 0;
+        margin: 0;
 
 
         &__arrow {
