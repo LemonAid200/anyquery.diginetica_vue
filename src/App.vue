@@ -45,10 +45,6 @@ export default {
   margin: 0 100px;
 }
 
-.main {
-  grid-template-columns: 1fr;
-  margin: 0 16px;
-}
 
 @media (max-width: $layout-breakpoint-extra-large) {
   #app {
@@ -90,6 +86,13 @@ export default {
       font-weight: 400;
       line-height: 16px;
     }
+
+    @media (max-width: $layout-breakpoint-small) {
+    .main {
+      grid-template-columns: 1fr;
+      margin: 0;
+    }
+  }
 }
 
 
