@@ -4,23 +4,23 @@
             <img src="../assets/images/arrow.svg" alt="">
         </div>
 
-        <VueCategoriesList/>
+        <CategoriesList/>
 
-        <VuePriceFilter/>
+        <PriceFilter/>
 
-        <VueBrandsFilter/>
+        <BrandsFilter/>
         
-        <VueSizesFilter/>
+        <SizesFilter/>
 
 
     </div>
 </template>
 
 <script>
-import VueSizesFilter from './customUI/SizesFilter.vue'
-import VueCategoriesList from './customUI/CategoriesList.vue';
-import VuePriceFilter from './customUI/PriceFilter.vue';
-import VueBrandsFilter from './customUI/BrandsFilter.vue';
+import SizesFilter from './customUI/SizesFilter.vue'
+import CategoriesList from './customUI/CategoriesList.vue';
+import PriceFilter from './customUI/PriceFilter.vue';
+import BrandsFilter from './customUI/BrandsFilter.vue';
 
 export default {
   name: 'VueFilters',
@@ -31,10 +31,10 @@ export default {
     }
   },
   components: {
-    VueCategoriesList,
-    VuePriceFilter,
-    VueBrandsFilter,
-    VueSizesFilter
+    CategoriesList,
+    PriceFilter,
+    BrandsFilter,
+    SizesFilter
   },
   data() {
     return {
@@ -66,12 +66,6 @@ export default {
         height: 12px;
     }
   }
-
-
-
-
-
-
 
   &-size {
       margin: 28px 0;

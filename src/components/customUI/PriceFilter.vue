@@ -18,7 +18,7 @@
    <script>
   
     export default {
-        name: 'VuePriceFilter',
+        name: 'PriceFilter',
         data() {
             return {
                 minPrice: '',

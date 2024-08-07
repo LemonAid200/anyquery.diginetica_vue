@@ -1,18 +1,18 @@
 <template>
     <li>
-        <VueCustomCheckbox style="float: left;"/>
+        <CustomCheckbox style="float: left;"/>
         <label>{{ atributeName }}</label>
         <span>3</span>
     </li>
 </template>
 
 <script>  
-import VueCustomCheckbox from './CustomCheckbox.vue' 
+import CustomCheckbox from './CustomCheckbox.vue' 
 
 export default {
-name: 'VueFilterAtributeItem',
+name: 'FilterAtributeItem',
 components:{
-    VueCustomCheckbox
+    CustomCheckbox
 },
 props: {
     atributeName: {

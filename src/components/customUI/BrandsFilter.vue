@@ -11,19 +11,19 @@
             </div>
             <div class="main__filters-brands-brandsList">
                 <ul>
-                    <VueFilterAtributeItem v-for="id in 9" :key="id"/>
+                    <FilterAtributeItem v-for="id in 9" :key="id"/>
                 </ul>
             </div>
         </div>
 </template>
    
 <script>
-import VueFilterAtributeItem from './FilterAtributeItem.vue';
+import FilterAtributeItem from './FilterAtributeItem.vue';
 
 export default {
-    name: 'VueBrandsFilter',
+    name: 'BrandsFilter',
     components: {
-        VueFilterAtributeItem
+        FilterAtributeItem
     },
     data() {
         return {

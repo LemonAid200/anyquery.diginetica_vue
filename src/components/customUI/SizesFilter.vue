@@ -3,19 +3,19 @@
         <h3>Размер</h3>
         <div class="main__filters-size-sizeList">
             <ul>
-                <VueFilterAtributeItem v-for="id  in 6" :key="id * 100"/>            
+                <FilterAtributeItem v-for="id  in 6" :key="id * 100"/>            
             </ul>
         </div>
     </div>
 </template>
    
 <script>
-import VueFilterAtributeItem from './FilterAtributeItem.vue';
+import FilterAtributeItem from './FilterAtributeItem.vue';
 
 export default {
-    name: 'VueSizesFilter',
+    name: 'SizesFilter',
     components: {
-        VueFilterAtributeItem
+        FilterAtributeItem
     },
     data() {
         return {

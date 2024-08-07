@@ -14,7 +14,7 @@
   <script>
  
   export default {
-    name: 'VueCategoriesList',
+    name: 'CategoriesList',
     props: {
         Categories: {
             type: Array,
