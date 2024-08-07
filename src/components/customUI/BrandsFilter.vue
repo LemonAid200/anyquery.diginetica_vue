@@ -22,7 +22,7 @@ import VueFilterAtributeItem from './FilterAtributeItem.vue';
 
 export default {
     name: 'VueBrandsFilter',
-    comments: {
+    components: {
         VueFilterAtributeItem
     },
     data() {
